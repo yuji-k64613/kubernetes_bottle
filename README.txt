@@ -1,3 +1,6 @@
+# postgresデータ領域
+rm -fr /tmp/data
+mkdir /tmp/data
 # コンテナのビルド(postgres)
 cd postgres
 docker build -t kube-postgres:1.0 .

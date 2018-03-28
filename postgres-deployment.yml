@@ -14,3 +14,12 @@ spec:
         image: kube-postgres:1.0
         ports:
         - containerPort: 5432
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: postgres-volume
+      volumes:
+      - name: postgres-volume
+        hostPath:
+          path: /tmp/data
+          type: Directory
+
