@@ -14,3 +14,9 @@ spec:
         image: kube-python:1.0
         ports:
         - containerPort: 8080
+        env:
+          - name: PORT
+            valueFrom:
+              configMapKeyRef:
+                name: bottle-config
+                key: BOTTLE_PORT
